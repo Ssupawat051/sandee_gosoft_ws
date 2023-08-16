@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/sommark/urdf_ws/install/setup.sh
