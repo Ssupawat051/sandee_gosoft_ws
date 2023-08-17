@@ -296,7 +296,7 @@
         <axis rpy = "0 0 0" xyz = "0 0 0"/>
     </joint>
     
-
+<!--Gazebo-->
     <gazebo reference = "base_link">
         <material> Gazebo/Green </material>
     </gazebo>
@@ -373,6 +373,7 @@
     </plugin>
     </gazebo>
 
+<!--Lidar-->
     <gazebo reference = "lidar_up_link">
         <sensor type = "ray" name ="sandee_laser_sensor">
         <pose>0 0 0 0 0 0</pose>
@@ -405,6 +406,28 @@
         <topicName>/scan</topicName>
         <frameName>lidar_up_link</frameName>
         </plugin>
+        </sensor>
+    </gazebo>
+
+<!--IMU-->
+    <gazebo reference = "base_link">
+        <gravity>true</gravity>
+        <sensor name = "sandee_imu_sensor" type ="imu">
+            <always_on>true</always_on>
+            <update_rate>100</update_rate>
+            <visualize>true</visualize>
+            <topic>__default_topic__</topic>
+            <plugin filename ="libgazebo_ros_imu_sensor.so" name="imu_plugin">
+                <topicName>sandee/imu</topicName>
+                <bodyName>base_link</bodyName>
+                <updateRateHZ>10.0</updateRateHZ>
+                <gaussianNoise>0.0</gaussianNoise>
+                <xyzOffset>0 0 0</xyzOffset>
+                <rpyOffset>0 0 0</rpyOffset>
+                <frameName>base_link</frameName>
+                <initialOrientationAsReference>false</initialOrientationAsReference>
+            </plugin>
+            <pose>0 0 0 0 0 0</pose>
         </sensor>
     </gazebo>
     
