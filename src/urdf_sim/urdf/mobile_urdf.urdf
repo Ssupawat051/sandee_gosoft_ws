@@ -157,7 +157,7 @@
    </link>
 
     <joint name = "lidar_up_joint" type = "fixed">
-        <origin xyz = "0 0 0.038" rpy = "0 0 0"/>
+        <origin xyz = "0 0 0.2" rpy = "0 0 0"/>
         <parent link = "base_link"/>
         <child link = "lidar_up_link"/>
         <limit effort = "0" velocity = "0"/>
@@ -377,20 +377,21 @@
         <sensor type = "ray" name ="sandee_laser_sensor">
         <pose>0 0 0 0 0 0</pose>
         <visualize>true</visualize>
-        <update_rate>20</update_rate>
+        <update_rate>5.5</update_rate>
         <ray>
             <scan>
                 <horizontal>
                     <samples>720</samples>
                     <resolution>1</resolution>
-                    <min_angle>3.14</min_angle>
+                    <min_angle>-3.14</min_angle>
                     <max_angle>3.14</max_angle>
                 </horizontal>
             </scan>
 
             <rang>
-                <min>0.1</min>
+                <min>0.067</min>
                 <max>12.0</max>
+                <resolution>0.01</resolution>
             </rang>
 
             <noise>
