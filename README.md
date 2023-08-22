@@ -8,3 +8,5 @@ step run
 ##### take control #####
 rosrun teleop_twist_keyboard teleop_twist_keyboard.py
 
+###rviz sim####
+roslaunch urdf_sim call_urdf.launch
