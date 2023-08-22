@@ -303,17 +303,17 @@
 
     <gazebo reference = "left_wheel_link">
         <material> Gazebo/Yellow </material>
-        <mu1 value = "0.2"/>
-        <mu2 value = "0.18"/>
-        <kp value = "1000"/>
+        <mu1 value = "0.3"/>
+        <mu2 value = "0.28"/>
+        <kp value = "2000"/>
         <kd value = "100"/>
     </gazebo>
 
     <gazebo reference = "right_wheel_link">
         <material> Gazebo/Purple </material>
-        <mu1 value = "0.2"/>
-        <mu2 value = "0.18"/>
-        <kp value = "1000"/>
+        <mu1 value = "0.3"/>
+        <mu2 value = "0.28"/>
+        <kp value = "2000"/>
         <kd value = "100"/>
     </gazebo>
 
@@ -327,33 +327,33 @@
 
     <gazebo reference = "caster1_link">
         <material> Gazebo/BlueGlow </material>
-        <mu1 value = "0.03"/>
-        <mu2 value = "0.028"/>
-        <kp value = "1000"/>
+        <mu1 value = "0.003"/>
+        <mu2 value = "0.0028"/>
+        <kp value = "3000"/>
         <kd value = "100"/>
     </gazebo>
 
     <gazebo reference = "caster2_link">
         <material> Gazebo/YellowGlow </material>
-        <mu1 value = "0.03"/>
-        <mu2 value = "0.028"/>
-        <kp value = "1000"/>
+        <mu1 value = "0.003"/>
+        <mu2 value = "0.0028"/>
+        <kp value = "3000"/>
         <kd value = "100"/>
     </gazebo>
 
     <gazebo reference = "caster3_link">
         <material> Gazebo/PurpleGlow </material>
-        <mu1 value = "0.03"/>
-        <mu2 value = "0.028"/>
-        <kp value = "1000"/>
+        <mu1 value = "0.003"/>
+        <mu2 value = "0.0028"/>
+        <kp value = "3000"/>
         <kd value = "100"/>
     </gazebo>
 
     <gazebo reference = "caster4_link">
         <material> Gazebo/TurquoiseGlow  </material>
-        <mu1 value = "0.03"/>
-        <mu2 value = "0.028"/>
-        <kp value = "1000"/>
+        <mu1 value = "0.003"/>
+        <mu2 value = "0.0028"/>
+        <kp value = "3000"/>
         <kd value = "100"/>
     </gazebo>
 
@@ -377,7 +377,7 @@
     <gazebo reference = "lidar_up_link">
         <sensor type = "ray" name ="sandee_laser_sensor">
         <pose>0 0 0 0 0 0</pose>
-        <visualize>true</visualize>
+        <visualize>false</visualize>
         <update_rate>5.5</update_rate>
         <ray>
             <scan>
@@ -390,7 +390,7 @@
             </scan>
 
             <range>
-                <min>0.067</min>
+                <min>0.3</min>
                 <max>12.0</max>
                 <resolution>0.01</resolution> 
             </range>
