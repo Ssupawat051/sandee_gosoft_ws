@@ -7,7 +7,4 @@
 # new environment variables
 
 # modified environment variables
-export CMAKE_PREFIX_PATH="/home/sommark/urdf_ws/devel:$CMAKE_PREFIX_PATH"
 export PWD='/home/sommark/urdf_ws/build'
-export ROSLISP_PACKAGE_DIRECTORIES="/home/sommark/urdf_ws/devel/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
-export ROS_PACKAGE_PATH="/home/sommark/urdf_ws/src:$ROS_PACKAGE_PATH"

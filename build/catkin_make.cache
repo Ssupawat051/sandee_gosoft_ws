@@ -1,2 +1,2 @@
-
+odometry_setup:urdf_sim
 -DCATKIN_DEVEL_PREFIX=/home/sommark/urdf_ws/devel -DCMAKE_INSTALL_PREFIX=/home/sommark/urdf_ws/install -G Unix Makefiles
