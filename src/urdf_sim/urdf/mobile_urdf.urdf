@@ -377,7 +377,7 @@
     <gazebo reference = "lidar_up_link">
         <sensor type = "ray" name ="sandee_laser_sensor">
         <pose>0 0 0 0 0 0</pose>
-        <visualize>false</visualize>
+        <visualize>true</visualize>
         <update_rate>5.5</update_rate>
         <ray>
             <scan>

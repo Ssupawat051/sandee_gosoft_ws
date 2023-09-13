@@ -1,4 +1,3 @@
-#include <ArduinoHardware.h>
 #include <ros.h> 
 #include <geometry_msgs/Twist.h> 
 #include <std_msgs/Float32.h> 
@@ -20,8 +19,8 @@ std_msgs::Float32 encR_msg;
 ros::Publisher EncL("Enc_L", &encL_msg);
 ros::Publisher EncR("Enc_R", &encR_msg);
 
-  long newPositionL;
-  long newPositionR;
+long newPositionL;
+long newPositionR;
   
 void callback(const geometry_msgs::Twist& cmd_vel)
 {
@@ -34,14 +33,15 @@ void callback(const geometry_msgs::Twist& cmd_vel)
 
 /////////////////////////////////////////////////  
   if (moveL > 0.0){ //forward
-    analogWrite(5,max(min(moveL*100,255),158)); // pwm min=158 max =255
+    analogWrite(5,51);
+
     digitalWrite(30,0); //dir
     
     
    }
    
   else if (moveL < 0.0){ //backward
-    analogWrite(5,max(min(abs(moveL)*100,255),158));
+    analogWrite(5,51);
     digitalWrite(30,1);
     
     }
@@ -55,13 +55,14 @@ void callback(const geometry_msgs::Twist& cmd_vel)
 ///////////////////////////////////////
 
   if (moveR > 0.0){
-    analogWrite(7,max(min(moveR*100,255),158);
+    analogWrite(7,51);
+
     digitalWrite(22,0);
     
     }
     
   else if (moveR < 0.0){
-    analogWrite(7,max(min(abs(moveR)*100,255),158));
+    analogWrite(7,51);
     digitalWrite(22,1);
     }
     
