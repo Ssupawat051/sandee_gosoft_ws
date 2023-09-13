@@ -18,7 +18,9 @@ roslaunch urdf_sim call_urdf.launch
 
 step run robot 
 :Lidar + Ros
-
+1.ls -l /dev/ttyUSB0
+2.sudo chmod 666 /dev/ttyUSB0
+3.roslaunch rplidar_ros view_rplidar.launch
 
 :MotorEncoder + Ros
 1.roscore
