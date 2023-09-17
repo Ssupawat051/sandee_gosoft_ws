@@ -1,6 +1,6 @@
 # urdf_ws
 SanDee
-step run
+step run in gazebo
 1.roslaunch gazebo_ros empty_world.launch # create map
 2.roslaunch urdf_sim spawn_sandee.launch #spawn robot
 3.rosrun urdf_sim sandee_all.py #run auto
@@ -14,3 +14,37 @@ roslaunch urdf_sim call_urdf.launch
 
 ##ถ้าขึ้น bash: /home/san/rplidar_ws/devel/setup.bash: No such file or directory ##
 ใช้คำสั่งgedit .bashrc เเล้วไปลบชื่อที่error
+
+
+step run robot 
+:Lidar + Ros
+1.ls -l /dev/ttyUSB0
+2.sudo chmod 666 /dev/ttyUSB0
+3.roslaunch rplidar_ros view_rplidar.launch
+
+:MotorEncoder + Ros
+1.roscore
+2.rosrun rosserial_arduino serial_node.py _port:=/dev/ttyUSB1
+3.rosrun teleop_twist_keyboard teleop_twist_keyboard.py
+
+http://wiki.ros.org/navigation/Tutorials/RobotSetup/TF
+
+#include <ros/ros.h>
+#include <tf/transform_broadcaster.h>
+
+int main(int argc, char** argv){
+  ros::init(argc, argv, "robot_tf_publisher");
+  ros::NodeHandle n;
+
+  ros::Rate r(100);
+
+  tf::TransformBroadcaster broadcaster;
+
+  while(n.ok()){
+    broadcaster.sendTransform(
+      tf::StampedTransform(
+        tf::Transform(tf::Quaternion(0, 0, 0, 1), tf::Vector3(0.1, 0.0, 0.2)),
+        ros::Time::now(),"base_link", "base_laser"));
+    r.sleep();
+  }
+}
