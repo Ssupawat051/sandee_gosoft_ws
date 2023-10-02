@@ -58,8 +58,8 @@ rosdep update
 sudo ./install.sh
 
 ติดตั้ง Ros ใน Arduino
-1.sudo apt-get install ros-${ROS_DISTRO}-rosserial-arduino
-2.sudo apt-get install ros-${ROS_DISTRO}-rosserial
+1.sudo apt-get install ros-noetic-rosserial-arduino
+2.sudo apt-get install ros-noetic-rosserial
 
 ติดตั้ง Libery ใน Arduino
 1.rosserial
