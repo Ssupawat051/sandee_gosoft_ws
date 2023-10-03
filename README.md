@@ -29,18 +29,8 @@ step run robot
 
 
 ///////////
-การสร้างworkspace
-1.mkdir catkin_ws
-2.mkdir catkin_ws/src
-3.cd catkin_ws/src 
-4.catkin_init_workspace
-5.cd catkin_ws
-6.catkin_make
-7.echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
-8.source ~/.bashrc
-
 ติดตั้ง ROS Noetic
-1.sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list
+1.sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
 2.sudo apt install curl # if you haven't already installed curl
 3.curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
 4.sudo apt update
@@ -52,33 +42,33 @@ source ~/.bashrc
 9.sudo apt install python3-rosdep python3-rosinstall python3-rosinstall-generator python3-wstool build-essential
 10.sudo apt install python3-rosdep
 11.sudo rosdep init
-rosdep update
+12.rosdep update
+
+การสร้างworkspace
+1.mkdir catkin_ws (catkin_ws สามารถตั้งชื่ออื่นได้)
+2.mkdir catkin_ws/src
+3.cd catkin_ws/src 
+4.catkin_init_workspace
+5.cd ..
+6.catkin_make
+7.echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
+8.source ~/.bashrc
+
 
 การติดตั้ง Arduino 1.8.10
 sudo ./install.sh
-
-ติดตั้ง Ros ใน Arduino
-1.sudo apt-get install ros-noetic-rosserial-arduino
-2.sudo apt-get install ros-noetic-rosserial
 
 ติดตั้ง Libery ใน Arduino
 1.rosserial
 2.encoder by paul stoffregen
 
-ติดตั้ง Rosserial
-sudo apt-get install ros-noetic-rosserial
-
-ติดตั้ง teleop
-sudo apt-get install ros-noetic-teleop-twist-keyborad
-
-การรัน การใช้ teleop
-1.roscore
-2.rosrun rosserial_arduino serial_node.py _port:=/dev/ttyUSB0
-3.rosrun teleop_twist_keyboard teleop_twist_keyboard.py
+การรันcode arduino ใน ทอมิเนอร์
+1.cd sandee_ws/firmware/Motor
+2.arduino --upload /sandee_ws/firmware/Motor/Motor.ino --port ~/dev/ttyUSB0
 
 สร้างเเพคเกจ ใน tf (pub) ไฟล์ที่1
 1.cd catkin_ws/src
-2.catkin_create_pkg test_tf roscpp tf geometry_mags
+2.catkin_create_pkg test_tf roscpp tf geometry_msgs
 3.cd test_tf/src
 4.sudo nano tf_test.cpp
 5.cd --
@@ -97,6 +87,17 @@ sudo apt-get install ros-noetic-teleop-twist-keyborad
 การรันtf
 rosrun tf test_tf
 
+ติดตั้ง Rosserial
+sudo apt-get install ros-noetic-rosserial
+
+ติดตั้ง teleop
+sudo apt-get install ros-noetic-teleop-twist-keyborad
+
+การรัน การใช้ teleop
+1.roscore
+2.rosrun rosserial_arduino serial_node.py _port:=/dev/ttyUSB0
+3.rosrun teleop_twist_keyboard teleop_twist_keyboard.py
+
 สร้างเเพคเกจ odom
 1.cd catkin_ws/src
 2.catkin_create_pkg odom_setup roscpp tf
@@ -108,3 +109,28 @@ rosrun tf test_tf
 
 การรันodom
 rosrun odom myodom
+
+
+การรันlidar
+1.ls -l /dev/ttyUSB0
+2.sudo chmod 666 /dev/ttyUSB0
+3.roslaunch rplidar_ros rplidar.launch
+4.rostopic echo /scan
+5.roslaunch hector_slam_launch tutorial.launch
+6.rosrun map_server map_saver -f my_room
+
+step run code
+roscore
+ls -l /dev/ttyUSB0
+sudo chmod 666 /dev/ttyUSB0
+roslaunch rplidar_ros rplidar.launch
+rostopic echo /scan
+roslaunch hector_slam_launch tutorial.launch
+rosrun map_server map_saver -f my_room
+
+arduino --upload /sandee_ws/firmware/Motor/Motor.ino --port ~/dev/ttyUSB1
+rosrun test_tf test_tf
+rosrun odom_setup odom
+rosrun rosserial_arduino serial_node.py _port:=/dev/ttyUSB1
+rosrun teleop_twist_keyboard teleop_twist_keyboard.py
+rosrun rviz rviz
