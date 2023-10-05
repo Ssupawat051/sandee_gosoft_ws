@@ -132,5 +132,8 @@ arduino --upload /sandee_ws/firmware/Motor/Motor.ino --port ~/dev/ttyUSB1
 rosrun test_tf test_tf
 rosrun odom_setup odom
 rosrun rosserial_arduino serial_node.py _port:=/dev/ttyUSB1
+
+sudo apt-get update
+sudo apt-get upgrade
 rosrun teleop_twist_keyboard teleop_twist_keyboard.py
 rosrun rviz rviz
