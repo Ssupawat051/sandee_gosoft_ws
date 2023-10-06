@@ -3,21 +3,7 @@
 #include <nav_msgs/Odometry.h>
 #include "std_msgs/Float32.h"
 
-  float x=0;
-  float y=0;
-  float th=0;
 
-
-  float dist_left;
-  float dist_right;
-
-
-  float encLeft;
-  float encRight;
-  
-
-  float encLeft_old;
-  float encRight_old;
   
 
 float x=0;
@@ -62,9 +48,6 @@ int main(int argc, char** argv){
   ros::Subscriber subL = n.subscribe("Enc_L", 1000, Enc_L_Callback);
   ros::Subscriber subR = n.subscribe("Enc_R", 1000, Enc_R_Callback);
 
-
-  ros::Subscriber subL = n.subscribe("Enc_L", 1000, Enc_L_Callback);
-  ros::Subscriber subR = n.subscribe("Enc_R", 1000, Enc_R_Callback);
 	
 
   tf::TransformBroadcaster odom_broadcaster;
@@ -80,10 +63,6 @@ int main(int argc, char** argv){
     ros::spinOnce();               // check for incoming messages
    	current_time = ros::Time::now();
 
-	
-	dist_left = (encLeft-encLeft_old) * DistancePerCount;
-	
-  	dist_right = (encRight-encRight_old) * DistancePerCount;
   
 	dist_left = (encLeft-encLeft_old) * DistancePerCount;
 
