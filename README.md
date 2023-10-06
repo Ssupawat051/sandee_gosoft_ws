@@ -137,3 +137,11 @@ sudo apt-get update
 sudo apt-get upgrade
 rosrun teleop_twist_keyboard teleop_twist_keyboard.py
 rosrun rviz rviz
+
+install joygame
+sudo apt-get install ros-noetic-joy
+sudo apt-get install ros-noetic-teleop-twist-joy
+
+controller joygame
+rosrun joy joy_node
+rosrun teleop_twist_joy teleop_node
