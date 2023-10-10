@@ -17,7 +17,7 @@
 - [x] URDF mobile robot
 
 ### Variable table
-| Variable | meaning |
+| Variable | Meaning |
 | --- | --- |
 | Odom|  |
 | TF |  |
