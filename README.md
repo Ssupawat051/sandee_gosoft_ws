@@ -6,6 +6,23 @@
 - Sensor:
 - Version: 0.0.1
 
+### TODO
+- [ ] Use robot with navigation stack
+- [ ] Fix bug orientation is not correct
+- [ ] Sensor fusion of feedback encoder is not work
+
+### DONE
+- [x] Control real robot with joystick
+- [x] Create and Save map for navigation
+- [x] URDF mobile robot
+
+### Variable table
+| Variable | meaning |
+| --- | --- |
+| Odom|  |
+| TF |  |
+| cmd_vel |  |
+
 #### step run in gazebo
 1. ``roslaunch gazebo_ros empty_world.launch`` # create map
 2. ``roslaunch urdf_sim spawn_sandee.launch`` #spawn robot
