@@ -1,8 +1,0 @@
-prefix=/home/sommark/urdf_ws/install
-
-Name: odometry_setup
-Description: Description of odometry_setup
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 
