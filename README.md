@@ -50,6 +50,9 @@
 #### How to install Hector slam
 ``sudo apt-get install ros-Noetic-hector-slam``
 
+#### How to install map-server
+``sudo apt-get install ros-noetic-map-server``
+
 ##### MotorEncoder + Ros
 1. ``roscore``
 2. ``rosrun rosserial_arduino serial_node.py _port:=/dev/ttyUSB1``
