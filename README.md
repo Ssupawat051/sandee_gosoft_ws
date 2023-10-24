@@ -48,7 +48,7 @@
 3. ``roslaunch rplidar_ros view_rplidar.launch``
 
 #### How to install Hector slam
-``sudo apt-get install ros-Noetic-hector-slam``
+``sudo apt-get install ros-noetic-hector-slam``
 
 #### How to install map-server
 ``sudo apt-get install ros-noetic-map-server``
