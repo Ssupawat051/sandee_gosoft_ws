@@ -47,6 +47,9 @@
 2. ``sudo chmod 666 /dev/ttyUSB0``
 3. ``roslaunch rplidar_ros view_rplidar.launch``
 
+#### How to install Hector slam
+``sudo apt-get install ros-Noetic-hector-slam``
+
 ##### MotorEncoder + Ros
 1. ``roscore``
 2. ``rosrun rosserial_arduino serial_node.py _port:=/dev/ttyUSB1``
