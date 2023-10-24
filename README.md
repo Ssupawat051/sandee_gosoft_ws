@@ -53,6 +53,12 @@
 #### How to install map-server
 ``sudo apt-get install ros-noetic-map-server``
 
+#### How to install navigation
+``sudo apt-get install ros-noetic-navigation``
+
+#### How to install teb-local-planner
+``sudo apt-get install ros-noetic-teb-local-planner``
+
 ##### MotorEncoder + Ros
 1. ``roscore``
 2. ``rosrun rosserial_arduino serial_node.py _port:=/dev/ttyUSB1``
