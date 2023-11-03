@@ -72,7 +72,8 @@ void setup()
 
 void loop()
 {
-    newPositionL = myEncL.read();
+  
+  newPositionL = myEncL.read();
   newPositionR = myEncR.read()*-1;
   
   if (newPositionL != oldPositionL) {
@@ -91,4 +92,5 @@ void loop()
   EncR.publish( &encR_msg );
   nh.spinOnce();
   delay(10);
+  
 }
