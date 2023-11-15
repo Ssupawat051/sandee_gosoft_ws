@@ -20,7 +20,7 @@
 	<node pkg="map_server" type="map_server" name="map_server" args="/home/mark/test_room5.yaml"/>
 
 	<!-- Run AMCL -->
-	<node pkg="amcl" type="amcl" name="amcl" output="screen"/>
+	<include file="$(find amcl)/examples/amcl_diff.launch" /> 
 
 	<!-- Run move base -->
 	
