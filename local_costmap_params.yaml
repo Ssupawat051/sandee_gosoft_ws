@@ -12,13 +12,13 @@ local_costmap:
     transform_tolerance: 2
 
     #set the update frequences (Hz)
-    update_frequency: 1
+    update_frequency: 5.0
 
     # set the publish frequency of the visualization information
     publish_frequency: 2.0
 
     # define what coordinate frames the costmap should run in 
-    global_frame: base_link
+    global_frame: odom
     
     # the coordinate frame in costmap should reference for the base of the robot
     robot_base_frame: base_link
