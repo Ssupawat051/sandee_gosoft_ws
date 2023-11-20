@@ -11,7 +11,7 @@
 	<node pkg="rosserial_arduino" type="serial_node.py" name="rosserial" respawn="true" args="_port:=/dev/ttyUSB1"/>
 
 	<!-- Setup transformation -->
-	<node pkg="tf" type="static_transform_publisher" name="base_laser" args="0 0 0.4 0 0 0 base_link laser_frame 100"/>
+	<node pkg="tf" type="static_transform_publisher" name="base_to_laser" args="0 0 0.4 0 0 0 base_link laser_frame 100"/>
 
 	<!-- Run odometry setup node -->
 	<node pkg="odom_setup" type="odom" name="odometryNode" output="screen"/>
