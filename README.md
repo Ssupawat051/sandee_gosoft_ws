@@ -1,9 +1,9 @@
-# urdf_ws
+# sandee_ws
 - Robot name: SanDee
 - ROS version: Noetic
-- Processor:
-- Controller:
-- Sensor:
+- Processor: Mini pc (Intel i3-6100U ,Ram 8 GB)
+- Controller: 
+- Sensor: Encoder , Lidar
 - Version: 0.0.1
 
 ### TODO
@@ -23,6 +23,10 @@
 | TF |  |
 | cmd_vel |  |
 
+
+
+#### simulation in gazebo
+
 #### step run in gazebo
 1. ``roslaunch gazebo_ros empty_world.launch`` # create map
 2. ``roslaunch urdf_sim spawn_sandee.launch`` #spawn robot
@@ -33,6 +37,8 @@
 
 #### rviz sim
 ``roslaunch urdf_sim call_urdf.launch``
+
+##################################################################################################
 
 #### Error & Troubleshooting
  ```bibtex
