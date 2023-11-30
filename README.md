@@ -40,7 +40,7 @@
 13. ``rosdep update``
 
 
-## How to install Package Ros
+## How to install Package with Ros
 
 #### How to install Hector slam
 ``sudo apt-get install ros-noetic-hector-slam``
@@ -64,16 +64,28 @@
 1. ``sudo apt-get install ros-noetic-joy``
 2. ``sudo apt-get install ros-noetic-teleop-twist-joy``
 
-##################################################################################################
-
-#### Error & Troubleshooting
+## Error & Troubleshooting
  ```bibtex
 ถ้าขึ้น bash: /home/san/rplidar_ws/devel/setup.bash: No such file or directory
 ```
 1. ``cd /home/your_name_pc`` for home directory
 2. ``gedit .bashrc`` เเล้วไปลบชื่อที่error
 
-##################################################################################################
+
+## How to install Arduino 1.8...
+1. ``เข้าไปในเว็บ https://www.arduino.cc/en/software``
+2. ``เลือก version Arduino IDE 1.8...``
+3. ``เลือกโหลด Linux ZIP file 64 bits (X86-64)``
+4. ``แตกไฟล์ที่โหลก แล้วเปิด Terminal ``
+5. ``sudo ./install.sh``
+ 
+#### Install Libery in Arduino
+1. ``rosserial``
+2. ``encoder by paul stoffregen``
+
+#### How to run code arduino with terminal
+1. ``cd sandee_ws/firmware/Motor``
+2. ``arduino --upload /sandee_ws/firmware/Motor/Motor.ino --port ~/dev/ttyUSB0``
 
 
 #### Step run robot
@@ -89,28 +101,6 @@
 3. ``rosrun teleop_twist_keyboard teleop_twist_keyboard.py``
 
 
-
-#### How to create workspace with ROS
-1. ``mkdir catkin_ws`` (catkin_ws สามารถตั้งชื่ออื่นได้)
-2. ``mkdir catkin_ws/src``
-3. ``cd catkin_ws/src`` 
-4. ``catkin_init_workspace``
-5. ``cd ..``
-6. ``catkin_make`` or ``catkin build``
-7. ``echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc``
-8. ``source ~/.bashrc``
-
-
-#### How to install Arduino 1.8.10
-``sudo ./install.sh``
-
-#### How to install Libery in Arduino
-1. ``rosserial``
-2. ``encoder by paul stoffregen``
-
-#### How to run code arduino with terminal
-1. ``cd sandee_ws/firmware/Motor``
-2. ``arduino --upload /sandee_ws/firmware/Motor/Motor.ino --port ~/dev/ttyUSB0``
 
 #### How to run teleop
 1. ``roscore``
