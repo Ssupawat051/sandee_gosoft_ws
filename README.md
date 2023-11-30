@@ -107,14 +107,15 @@
 2. ``rosrun rosserial_arduino serial_node.py _port:=/dev/ttyUSB0``
 3. ``rosrun teleop_twist_keyboard teleop_twist_keyboard.py``
 
-#### สร้างเเพคเกจ odom
+## Create for Robot
+### Odometry
 1. ``cd catkin_ws/src``
 2. ``catkin_create_pkg odom_setup roscpp tf``
 3. ``cd src``
 4. ``sudo nano myodom.cpp``
-5. ``cd --``
-6. ``cd catkin_ws``
-7. ``catkin_make``
+6. ``cd --``
+7. ``cd catkin_ws``
+8. ``catkin_make``
 
 #### How to run Odom
 ``rosrun odom myodom``
