@@ -23,54 +23,7 @@
 | TF |  |
 | cmd_vel |  |
 
-
-
-### Simulation in gazebo
-
-#### step run in gazebo
-1. ``roslaunch gazebo_ros empty_world.launch`` # create map
-2. ``roslaunch urdf_sim spawn_sandee.launch`` #spawn robot
-3. ``rosrun urdf_sim sandee_all.py`` #run auto
-
-#### How to take control
-``rosrun teleop_twist_keyboard teleop_twist_keyboard.py``
-
-#### rviz sim
-``roslaunch urdf_sim call_urdf.launch``
-
-##################################################################################################
-
-#### Error & Troubleshooting
- ```bibtex
-ถ้าขึ้น bash: /home/san/rplidar_ws/devel/setup.bash: No such file or directory
-```
-1. ``cd /home/your_name_pc`` for home directory
-2. ``gedit .bashrc`` เเล้วไปลบชื่อที่error
-
-#### Step run robot 
-##### Lidar + Ros
-1. ``ls -l /dev/ttyUSB0``
-2. ``sudo chmod 666 /dev/ttyUSB0``
-3. ``roslaunch rplidar_ros view_rplidar.launch``
-
-#### How to install Hector slam
-``sudo apt-get install ros-noetic-hector-slam``
-
-#### How to install map-server
-``sudo apt-get install ros-noetic-map-server``
-
-#### How to install navigation
-``sudo apt-get install ros-noetic-navigation``
-
-#### How to install teb-local-planner
-``sudo apt-get install ros-noetic-teb-local-planner``
-
-##### MotorEncoder + Ros
-1. ``roscore``
-2. ``rosrun rosserial_arduino serial_node.py _port:=/dev/ttyUSB1``
-3. ``rosrun teleop_twist_keyboard teleop_twist_keyboard.py``
-
-#### How to install ROS Noetic
+## How to install Ros noetic
 1. ``sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'``
 2. ``sudo apt install curl # if you haven't already installed curl``
 3. ``curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -``
@@ -84,6 +37,57 @@
 11. ``sudo apt install python3-rosdep``
 12. ``sudo rosdep init``
 13. ``rosdep update``
+
+
+## How to install Package Ros
+
+#### How to install Hector slam
+``sudo apt-get install ros-noetic-hector-slam``
+
+#### How to install map-server
+``sudo apt-get install ros-noetic-map-server``
+
+#### How to install navigation
+``sudo apt-get install ros-noetic-navigation``
+
+#### How to install teb-local-planner
+``sudo apt-get install ros-noetic-teb-local-planner``
+
+#### How to install Rosserial
+``sudo apt-get install ros-noetic-rosserial``
+
+#### How to install teleop
+``sudo apt-get install ros-noetic-teleop-twist-keyborad``
+
+#### How to install joygame
+1. ``sudo apt-get install ros-noetic-joy``
+2. ``sudo apt-get install ros-noetic-teleop-twist-joy``
+
+##################################################################################################
+
+#### Error & Troubleshooting
+ ```bibtex
+ถ้าขึ้น bash: /home/san/rplidar_ws/devel/setup.bash: No such file or directory
+```
+1. ``cd /home/your_name_pc`` for home directory
+2. ``gedit .bashrc`` เเล้วไปลบชื่อที่error
+
+##################################################################################################
+
+
+#### Step run robot
+##### Lidar + Ros
+1. ``ls -l /dev/ttyUSB0``
+2. ``sudo chmod 666 /dev/ttyUSB0``
+3. ``roslaunch rplidar_ros view_rplidar.launch``
+
+
+##### MotorEncoder + Ros
+1. ``roscore``
+2. ``rosrun rosserial_arduino serial_node.py _port:=/dev/ttyUSB1``
+3. ``rosrun teleop_twist_keyboard teleop_twist_keyboard.py``
+
+
 
 #### How to create workspace with ROS
 1. ``mkdir catkin_ws`` (catkin_ws สามารถตั้งชื่ออื่นได้)
@@ -106,33 +110,6 @@
 #### How to run code arduino with terminal
 1. ``cd sandee_ws/firmware/Motor``
 2. ``arduino --upload /sandee_ws/firmware/Motor/Motor.ino --port ~/dev/ttyUSB0``
-
-#### สร้างเเพคเกจ ใน tf (pub) ไฟล์ที่1
-1. ``cd catkin_ws/src``
-2. ``catkin_create_pkg test_tf roscpp tf geometry_msgs``
-3. ``cd test_tf/src``
-4. ``sudo nano tf_test.cpp``
-5. ``cd --``
-6. ``cd catkin_ws``
-7. ``catkin_make`` or ``catkin build``
-
-#### สร้างเเพคเกจ ใน tf (sub) ไฟล์ที่2
-1. ``cd catkin_ws/src``
-2. ``cd test_tf``
-3. ``cd src``
-4. ``sudo nano tf_listen.cpp``
-5. ``cd --``
-6. ``cd catkin_ws``
-7. ``catkin_make``
-
-#### How to run tf
-``rosrun tf test_tf``
-
-#### How to install Rosserial
-``sudo apt-get install ros-noetic-rosserial``
-
-#### How to install teleop
-``sudo apt-get install ros-noetic-teleop-twist-keyborad``
 
 #### How to run teleop
 1. ``roscore``
@@ -178,11 +155,22 @@
 3. ``rosrun teleop_twist_keyboard teleop_twist_keyboard.py``
 4. ``rosrun rviz rviz``
 
-#### How to install joygame
-1. ``sudo apt-get install ros-noetic-joy``
-2. ``sudo apt-get install ros-noetic-teleop-twist-joy``
 
 #### How to run robot with joy
 ##### controller joygame
 1. ``rosrun joy joy_node``
 2. ``rosrun teleop_twist_joy teleop_node``
+
+
+### Simulation in gazebo
+
+#### step run in gazebo
+1. ``roslaunch gazebo_ros empty_world.launch`` # create map
+2. ``roslaunch urdf_sim spawn_sandee.launch`` #spawn robot
+3. ``rosrun urdf_sim sandee_all.py`` #run auto
+
+#### How to take control
+``rosrun teleop_twist_keyboard teleop_twist_keyboard.py``
+
+#### rviz sim
+``roslaunch urdf_sim call_urdf.launch``
