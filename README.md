@@ -42,27 +42,30 @@
 
 ## How to install Package with Ros
 
-#### How to install Hector slam
+### How to install Hector slam
 ``sudo apt-get install ros-noetic-hector-slam``
 
-#### How to install map-server
+### How to install map-server
 ``sudo apt-get install ros-noetic-map-server``
 
-#### How to install navigation
+### How to install navigation
 ``sudo apt-get install ros-noetic-navigation``
 
-#### How to install teb-local-planner
+### How to install teb-local-planner
 ``sudo apt-get install ros-noetic-teb-local-planner``
 
-#### How to install Rosserial
+### How to install Rosserial
 ``sudo apt-get install ros-noetic-rosserial``
 
-#### How to install teleop
+### How to install teleop
 ``sudo apt-get install ros-noetic-teleop-twist-keyborad``
 
-#### How to install joygame
+### How to install joygame
 1. ``sudo apt-get install ros-noetic-joy``
 2. ``sudo apt-get install ros-noetic-teleop-twist-joy``
+####How to run joygane
+1. ``rosrun joy joy_node``
+2. ``rosrun teleop_twist_joy teleop_node``
 
 ## Error & Troubleshooting
  ```bibtex
