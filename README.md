@@ -59,11 +59,13 @@
 
 ### How to install teleop
 ``sudo apt-get install ros-noetic-teleop-twist-keyborad``
+#### How to run teleop
+``rosrun teleop_twist_keyboard teleop_twist_keyboard.py``
 
 ### How to install joygame
 1. ``sudo apt-get install ros-noetic-joy``
 2. ``sudo apt-get install ros-noetic-teleop-twist-joy``
-#### How to run joygane
+#### How to run joygame
 1. ``rosrun joy joy_node``
 2. ``rosrun teleop_twist_joy teleop_node``
 
@@ -82,7 +84,7 @@
 4. ``แตกไฟล์ที่โหลก แล้วเปิด Terminal ``
 5. ``sudo ./install.sh``
  
-#### Install Libery in Arduino
+### Install Libery in Arduino
 1. ``rosserial``
 2. ``encoder by paul stoffregen``
 
@@ -90,7 +92,39 @@
 1. ``cd sandee_ws/firmware/Motor``
 2. ``arduino --upload /sandee_ws/firmware/Motor/Motor.ino --port ~/dev/ttyUSB0``
 
+## Create packages for Robot
+### firmware
+1. ``cd sandee_ws/src ``
+2. ``mkdir firmware ``
+#### How to run code arduino with terminal
+1. ``cd sandee_ws/firmware/Motor``
+2. ``arduino --upload /sandee_ws/firmware/Motor/Motor.ino --port ~/dev/ttyUSB0``
 
+### odom_setup
+1. ``cd sandee_ws/src``
+2. ``catkin_create_pkg odom_setup roscpp tf``
+3. ``cd src``
+4. ``sudo nano myodom.cpp``
+6. ``cd --``
+7. ``cd sandee_ws``
+8. ``catkin_make``
+#### How to run Odom
+``rosrun odom myodom``
+
+### hector_slam
+1. `` ...  ``
+
+### rplidar_ros
+1. `` ...  ``
+### navigation
+1. ``cd sandee/src ``
+2. ``mkdir navigation``
+3. ``cd navigation``
+4. ``mkdir launch``
+
+
+
+############################################################################################
 #### Step run robot
 ##### Lidar + Ros
 1. ``ls -l /dev/ttyUSB0``
@@ -110,18 +144,6 @@
 2. ``rosrun rosserial_arduino serial_node.py _port:=/dev/ttyUSB0``
 3. ``rosrun teleop_twist_keyboard teleop_twist_keyboard.py``
 
-## Create for Robot
-### Odometry
-1. ``cd catkin_ws/src``
-2. ``catkin_create_pkg odom_setup roscpp tf``
-3. ``cd src``
-4. ``sudo nano myodom.cpp``
-6. ``cd --``
-7. ``cd catkin_ws``
-8. ``catkin_make``
-
-#### How to run Odom
-``rosrun odom myodom``
 
 #### How to run lidar sensor
 1. ``ls -l /dev/ttyUSB0``
@@ -169,3 +191,4 @@
 
 #### rviz sim
 ``roslaunch urdf_sim call_urdf.launch``
+############################################################################################
