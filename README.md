@@ -63,7 +63,7 @@
 ### How to install joygame
 1. ``sudo apt-get install ros-noetic-joy``
 2. ``sudo apt-get install ros-noetic-teleop-twist-joy``
-####How to run joygane
+#### How to run joygane
 1. ``rosrun joy joy_node``
 2. ``rosrun teleop_twist_joy teleop_node``
 
