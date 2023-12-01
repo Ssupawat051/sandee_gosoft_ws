@@ -91,91 +91,25 @@
 1. ``cd sandee_ws/firmware/Motor``
 2. ``arduino --upload /sandee_ws/firmware/Motor/Motor.ino --port ~/dev/ttyUSB0``
 
----------------------------------------------------------------------------------------------
-## Create packages for Robot
-### firmware
-1. ``cd sandee_ws/src ``
-2. ``mkdir firmware ``
-3. 
-### odom_setup
-1. ``cd sandee_ws/src``
-2. ``catkin_create_pkg odom_setup roscpp tf``
-3. ``cd src``
-4. ``sudo nano myodom.cpp``
-6. ``cd --``
-7. ``cd sandee_ws``
-8. ``catkin_make``
-#### How to run Odom
-``rosrun odom myodom``
-
-### hector_slam
-1. `` ...  ``
-
-### rplidar_ros
-1. `` ...  ``
-### navigation
-1. ``cd sandee/src ``
-2. ``mkdir navigation``
-3. ``cd navigation``
-4. ``mkdir launch``
-
-
-
-############################################################################################
-#### Step run robot
-##### Lidar + Ros
-1. ``ls -l /dev/ttyUSB0``
-2. ``sudo chmod 666 /dev/ttyUSB0``
-3. ``roslaunch rplidar_ros view_rplidar.launch``
-
-
-##### MotorEncoder + Ros
-1. ``roscore``
-2. ``rosrun rosserial_arduino serial_node.py _port:=/dev/ttyUSB1``
-3. ``rosrun teleop_twist_keyboard teleop_twist_keyboard.py``
-
-
-
-#### How to run teleop
-1. ``roscore``
-2. ``rosrun rosserial_arduino serial_node.py _port:=/dev/ttyUSB0``
-3. ``rosrun teleop_twist_keyboard teleop_twist_keyboard.py``
-
-
-#### How to run lidar sensor
-1. ``ls -l /dev/ttyUSB0``
-2. ``sudo chmod 666 /dev/ttyUSB0``
-3. ``roslaunch rplidar_ros rplidar.launch``
-4. ``rostopic echo /scan``
-5. ``roslaunch hector_slam_launch tutorial.launch``
-6. ``rosrun map_server map_saver -f my_room``
-
-#### Step run code
+## How to run for Robot
+### How to get map (Lidar + Slam + Odom + TF + Teleop Joygame)
 1. ``roscore``
 2. ``ls -l /dev/ttyUSB0``
 3. ``sudo chmod 666 /dev/ttyUSB0``
-4. ``roslaunch rplidar_ros rplidar.launch``
+4. ``roslaunch rplidar_ros view_rplidar.launch``
 5. ``rostopic echo /scan``
 6. ``roslaunch hector_slam_launch tutorial.launch``
-7. ``rosrun map_server map_saver -f my_room``
+7. ``arduino --upload /sandee_ws/firmware/Motor/Motor.ino --port ~/dev/ttyUSB1``
+8. ``rosrun odom myodom`` 
+9. ``rosrun rosserial_arduino serial_node.py _port:=/dev/ttyUSB1``
+10. ``rosrun joy joy_node``
+11. ``rosrun teleop_twist_joy teleop_node``
+12. ``rosrun map_server map_saver -f my_room`` (คือการ save map หลังจากเดินทั่วห้อง ,my_room คือชื่อที่สามารถตั้งเองได้)
 
-1. ``arduino --upload /sandee_ws/firmware/Motor/Motor.ino --port ~/dev/ttyUSB1``
-2. ``rosrun test_tf test_tf``
-3. ``rosrun odom_setup odom``
-4. ``rosrun rosserial_arduino serial_node.py _port:=/dev/ttyUSB1``
+### How to run final for robot
+1. ``roslaunch navigation navigation``
 
-1. ``sudo apt-get update``
-2. ``sudo apt-get upgrade``
-3. ``rosrun teleop_twist_keyboard teleop_twist_keyboard.py``
-4. ``rosrun rviz rviz``
-
-
-#### How to run robot with joy
-##### controller joygame
-1. ``rosrun joy joy_node``
-2. ``rosrun teleop_twist_joy teleop_node``
-
-
+###########################################################################################
 ### Simulation in gazebo
 
 #### step run in gazebo
