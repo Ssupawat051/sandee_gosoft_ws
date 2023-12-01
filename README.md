@@ -93,7 +93,7 @@
 
 #### Error #include <cstring>
 1.``Home/Arduino/libraries/Rosserial/src/ros/msg.h``
-2.``เปลี่ยน #include <cstring> เป็น #include <string>``
+2.``เปลี่ยน #include <cstring> เป็น #include <string.h>``
 3.``เปลี่ยน std::memcpy(&val, &f, sizeof(val)); เป็น memcpy(&val, &f, sizeof(val)); ``
 4.``เปลี่ยน std::memcpy(f, &val, sizeof(val)); เป็น memcpy(f, &val, sizeof(val)); ``
 
