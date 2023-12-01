@@ -2,7 +2,7 @@
 - Robot name: SanDee
 - ROS version: Noetic
 - Processor: Mini pc (Intel i3-6100U ,Ram 8 GB)
-- Controller: 
+- Controller: Arduino uno
 - Sensor: Encoder , Lidar
 - Version: 0.0.1
 
@@ -76,7 +76,6 @@
 1. ``cd /home/your_name_pc`` for home directory
 2. ``gedit .bashrc`` เเล้วไปลบชื่อที่error
 
-
 ## How to install Arduino 1.8...
 1. ``เข้าไปในเว็บ https://www.arduino.cc/en/software``
 2. ``เลือก version Arduino IDE 1.8...``
@@ -92,14 +91,12 @@
 1. ``cd sandee_ws/firmware/Motor``
 2. ``arduino --upload /sandee_ws/firmware/Motor/Motor.ino --port ~/dev/ttyUSB0``
 
+---------------------------------------------------------------------------------------------
 ## Create packages for Robot
 ### firmware
 1. ``cd sandee_ws/src ``
 2. ``mkdir firmware ``
-#### How to run code arduino with terminal
-1. ``cd sandee_ws/firmware/Motor``
-2. ``arduino --upload /sandee_ws/firmware/Motor/Motor.ino --port ~/dev/ttyUSB0``
-
+3. 
 ### odom_setup
 1. ``cd sandee_ws/src``
 2. ``catkin_create_pkg odom_setup roscpp tf``
