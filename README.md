@@ -83,7 +83,7 @@
 4. ``แตกไฟล์ที่โหลก แล้วเปิด Terminal ``
 5. ``sudo ./install.sh``
  
-### Install Libery in Arduino
+### Install Library in Arduino
 1. ``rosserial``
 2. ``encoder by paul stoffregen``
 
