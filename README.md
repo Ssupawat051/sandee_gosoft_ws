@@ -80,7 +80,7 @@
 1. ``เข้าไปในเว็บ https://www.arduino.cc/en/software``
 2. ``เลือก version Arduino IDE 1.8...``
 3. ``เลือกโหลด Linux ZIP file 64 bits (X86-64)``
-4. ``แตกไฟล์ที่โหลก แล้วเปิด Terminal ``
+4. ``แตกไฟล์ที่โหลด แล้วเปิด Terminal ``
 5. ``sudo ./install.sh``
  
 ### Install Library in Arduino
