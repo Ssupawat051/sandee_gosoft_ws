@@ -16,7 +16,7 @@
 		float encLeft_old;
   		float encRight_old;
 
-double DistancePerCount = (3.14159265 * 0.12192) / 3246;
+double DistancePerCount = (3.14159265 * 0.12192) / 71374.55;
 
 //..................................................................................
 void Enc_L_Callback(const std_msgs::Float32& encL)
