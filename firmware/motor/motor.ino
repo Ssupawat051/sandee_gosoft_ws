@@ -25,7 +25,7 @@ void roverCallBack(const geometry_msgs::Twist& cmd_vel)
 {
 
   double x = cmd_vel.linear.x;
-        double z = cmd_vel.angular.z;
+  double z = cmd_vel.angular.z;
 
   double moveL = x+(z/2);
   double moveR = x-(z/2);
