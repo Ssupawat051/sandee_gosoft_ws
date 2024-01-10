@@ -3,21 +3,20 @@
 #include <nav_msgs/Odometry.h>
 #include "std_msgs/Float32.h"
 
+float x=0;
+float y=0;
+float th=0;
 
-  float x=0;
-  float y=0;
-  float th=0;
+float dist_left;
+float dist_right;
+  
+float encLeft;
+float encRight;
 
-  float dist_left;
-  float dist_right;
-
-	float encLeft;
-  	float encRight;
-		float encLeft_old;
-  		float encRight_old;
+float encLeft_old;
+float encRight_old;
 
 double DistancePerCount = (3.14159265 * 0.12192) / 71374.55;
-
 //..................................................................................
 void Enc_L_Callback(const std_msgs::Float32& encL)
 {
@@ -30,19 +29,19 @@ void Enc_R_Callback(const std_msgs::Float32& encR)
 }
 //..................................................................................
 int main(int argc, char** argv){
-  ros::init(argc, argv, "odometry_publisher");
+ ros::init(argc, argv, "odometry_publisher");
 
-  ros::NodeHandle n;
-  ros::Publisher odom_pub = n.advertise<nav_msgs::Odometry>("odom", 50);
+ ros::NodeHandle n;
+ ros::Publisher odom_pub = n.advertise<nav_msgs::Odometry>("odom", 50);
 
-	ros::Subscriber subL = n.subscribe("Enc_L", 1000, Enc_L_Callback);
-	ros::Subscriber subR = n.subscribe("Enc_R", 1000, Enc_R_Callback);
-  tf::TransformBroadcaster odom_broadcaster;
+ ros::Subscriber subL = n.subscribe("Enc_L", 1000, Enc_L_Callback);
+ ros::Subscriber subR = n.subscribe("Enc_R", 1000, Enc_R_Callback);
+ tf::TransformBroadcaster odom_broadcaster;
 
 
-  ros::Time current_time, last_time;
+ ros::Time current_time, last_time;
  current_time = ros::Time::now();
-  last_time = ros::Time::now();
+ last_time = ros::Time::now();
 
   ros::Rate r(20.0);
   while(n.ok()){
@@ -50,13 +49,13 @@ int main(int argc, char** argv){
     ros::spinOnce();               // check for incoming messages
    	current_time = ros::Time::now();
 
-		dist_left = (encLeft-encLeft_old) * DistancePerCount;
-  		dist_right = (encRight-encRight_old) * DistancePerCount;
+	dist_left = (encLeft-encLeft_old) * DistancePerCount;
+  	dist_right = (encRight-encRight_old) * DistancePerCount;
 	double dist =  (dist_right + dist_left) * 0.5;
     	double rota = (dist_left - dist_right) / 0.422;
 
-		encLeft_old = encLeft;
-		encRight_old = encRight;
+	encLeft_old = encLeft;
+	encRight_old = encRight;
 
 	double dt = (current_time - last_time).toSec();
     	double delta_x = dist * cos(th + (rota/2.0));
@@ -110,3 +109,4 @@ int main(int argc, char** argv){
 
     r.sleep();
   }
+}
