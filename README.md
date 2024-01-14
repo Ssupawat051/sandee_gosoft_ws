@@ -2,7 +2,7 @@
 - Robot name: SanDee
 - ROS version: Noetic
 - Processor: Mini pc (Intel i3-6100U ,Ram 8 GB)
-- Controller: Arduino uno
+- Controller: Arduino Mega 2560
 - Sensor: Encoder , Lidar
 - Version: 0.0.1
 
