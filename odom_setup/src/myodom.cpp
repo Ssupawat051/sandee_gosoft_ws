@@ -53,7 +53,7 @@ int main(int argc, char** argv){
 
     dist_left = (encLeft-encLeft_old) * DistancePerCount;
     dist_right = (encRight-encRight_old) * DistancePerCount;
-    double dist =  (dist_right + dist_left) * 0.5;
+    double dist =  (dist_right + dist_left) / 2;
     double rota = (dist_left - dist_right) / 0.43;
 
     encLeft_old = encLeft;
