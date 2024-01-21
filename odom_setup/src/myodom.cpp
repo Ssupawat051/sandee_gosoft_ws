@@ -47,8 +47,9 @@ int main(int argc, char** argv){
   ros::Rate r(20.0);
   while(n.ok()){
 
-    ros::spinOnce();               // check for incoming messages
-   	current_time = ros::Time::now();
+    ros::spinOnce();  // check for incoming messages
+	  
+    current_time = ros::Time::now();
 
     dist_left = (encLeft-encLeft_old) * DistancePerCount;
     dist_right = (encRight-encRight_old) * DistancePerCount;
@@ -106,7 +107,7 @@ int main(int argc, char** argv){
     //publish the message
     odom_pub.publish(odom);
 
-    	last_time = current_time;
+     last_time = current_time;
 
     r.sleep();
   }
