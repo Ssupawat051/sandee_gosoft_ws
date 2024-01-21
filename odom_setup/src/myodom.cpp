@@ -3,7 +3,6 @@
 #include <nav_msgs/Odometry.h>
 #include "std_msgs/Float32.h"
 
-
 float x = 0;
 float y = 0;
 float th = 0;
@@ -36,8 +35,8 @@ int main(int argc, char** argv){
   ros::NodeHandle n;
   ros::Publisher odom_pub = n.advertise<nav_msgs::Odometry>("odom", 50);
 
-	ros::Subscriber subL = n.subscribe("Enc_L", 1000, Enc_L_Callback);
-	ros::Subscriber subR = n.subscribe("Enc_R", 1000, Enc_R_Callback);
+  ros::Subscriber subL = n.subscribe("Enc_L", 1000, Enc_L_Callback);
+  ros::Subscriber subR = n.subscribe("Enc_R", 1000, Enc_R_Callback);
   tf::TransformBroadcaster odom_broadcaster;
 
 
@@ -51,24 +50,24 @@ int main(int argc, char** argv){
     ros::spinOnce();               // check for incoming messages
    	current_time = ros::Time::now();
 
-		dist_left = (encLeft-encLeft_old) * DistancePerCount;
-  	dist_right = (encRight-encRight_old) * DistancePerCount;
-	  double dist =  (dist_right + dist_left) * 0.5;
+    dist_left = (encLeft-encLeft_old) * DistancePerCount;
+    dist_right = (encRight-encRight_old) * DistancePerCount;
+    double dist =  (dist_right + dist_left) * 0.5;
     double rota = (dist_left - dist_right) / 0.43;
 
-		encLeft_old = encLeft;
-		encRight_old = encRight;
+    encLeft_old = encLeft;
+    encRight_old = encRight;
 
-	  double dt = (current_time - last_time).toSec();
+    double dt = (current_time - last_time).toSec();
     double delta_x = dist * cos(th + (rota/2.0));
     double delta_y = dist * sin(th + (rota/2.0));
-  	double delta_th = rota;
+    double delta_th = rota;
 
 
     //compute odometry in a typical way given the velocities of the robot
-   	x += delta_x;
-  	y += delta_y;
-  	th += delta_th;
+    x += delta_x;
+    y += delta_y;
+    th += delta_th;
 
     //since all odometry is 6DOF we'll need a quaternion created from yaw
     geometry_msgs::Quaternion odom_quat = tf::createQuaternionMsgFromYaw(th);
