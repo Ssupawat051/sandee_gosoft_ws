@@ -5,9 +5,6 @@
 #include <stdio.h>
 #include <termios.h>    //termios, TCSANOW, ECHO, ICANON
 #include <unistd.h>     //STDIN_FILENO
-//#include <ros/ros.h>
-//#include <json/json.h>
-//#include <fstream>
 
 int getch()
 {
@@ -80,15 +77,6 @@ void SendGoal(double x, double y, double theta)
     pubg.publish(goal);
 }
 
-/*std::string getDataFromJson(const std::string& jsonFilePath, const std::string& key) {
-    std::ifstream file(jsonFilePath);
-    Json::Reader reader;
-    Json::Value root;
-    reader.parse(file, root);
-
-    std::string value = root[key].asString();
-    return value;
-}*/
 
 
 int main(int argc, char** argv)
@@ -105,23 +93,6 @@ int main(int argc, char** argv)
 
   ros::Rate loop_rate(10);
 
-  /*while(ros::ok()){
-    ros::spinOnce();
-
-    std::string valueC = getDataFromJson(jsonFilePath,"C");
-
-    if(valueC == "001"){
-      SetPose(-0.006, -0.025,  0.086);
-      SendGoal(-0.006, -0.025,  0.086);
-    }
-    else if (valueC == "010"){
-      SendGoal(3.382, 1.152, 1.616);
-    }
-    else {
-      ROS_INFO("Sorry Broooo");
-    }
-    loop_rate.sleep();
-  }*/  
   while (ros::ok()){
   ros::spinOnce();
   int c = getch();   // call your non-blocking input function
