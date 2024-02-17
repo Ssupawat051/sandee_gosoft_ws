@@ -25,7 +25,7 @@ void roverCallBack(const geometry_msgs::Twist& cmd_vel)
 {
 
   double x = cmd_vel.linear.x;
-        double z = cmd_vel.angular.z;
+  double z = cmd_vel.angular.z;
 
   double moveL = x+(z/2);
   double moveR = x-(z/2);
@@ -34,10 +34,12 @@ void roverCallBack(const geometry_msgs::Twist& cmd_vel)
 if (moveL>0.0){
         analogWrite(6,max(min(moveL*100,78),45));
         digitalWrite(7,0);
-    }else if (moveL<0.0){
+    }
+else if (moveL<0.0){
         analogWrite(6,max(min(abs(moveL)*100,78),45));
         digitalWrite(7,1);
-    }else{ 
+    }
+else{ 
         analogWrite(6,0);
         digitalWrite(7,0);
   }
@@ -45,10 +47,12 @@ if (moveL>0.0){
 if (moveR>0.0){
         analogWrite(44,max(min(moveR*100,78),45));
         digitalWrite(45,0);
-    }else if (moveR<0.0){
+    }
+else if (moveR<0.0){
         analogWrite(44,max(min(abs(moveR)*100,78),45));
         digitalWrite(45,1);
-    }else{ 
+    }
+else{ 
         analogWrite(44,0);
         digitalWrite(45,0);
         }
