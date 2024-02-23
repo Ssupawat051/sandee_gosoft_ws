@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="urdf_sandee">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-8.35136337533626E-05 -0.0045588346483541 0.0245592737743742"
+        rpy="0 0 0" />
+      <mass
+        value="5.34598858192989" />
+      <inertia
+        ixx="0.0328364851157701"
+        ixy="1.17621012722774E-08"
+        ixz="2.3601976405729E-14"
+        iyy="0.0249243379409117"
+        iyz="-0.000165329406089673"
+        izz="0.0545548819536187" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_sandee/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.501960784313725 1 0.501960784313725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_sandee/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="Wheel_R_Link">
+    <inertial>
+      <origin
+        xyz="2.2289E-07 1.7015E-07 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.30963" />
+      <inertia
+        ixx="0.00037008"
+        ixy="8.516E-10"
+        ixz="-2.9959E-20"
+        iyy="0.00037008"
+        iyz="-5.7279E-20"
+        izz="0.00067839" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_sandee/meshes/Wheel_R_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_sandee/meshes/Wheel_R_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Wheel_R"
+    type="fixed">
+    <origin
+      xyz="0 -0.23198 -0.098154"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Wheel_R_Link" />
+    <axis
+      xyz="0 0 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="100" />
+  </joint>
+  <link
+    name="Wheel_L_Link">
+    <inertial>
+      <origin
+        xyz="2.2289E-07 1.7015E-07 6.9389E-18"
+        rpy="0 0 0" />
+      <mass
+        value="0.30963" />
+      <inertia
+        ixx="0.00037008"
+        ixy="8.516E-10"
+        ixz="-3.374E-20"
+        iyy="0.00037008"
+        iyz="-6.9427E-20"
+        izz="0.00067839" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_sandee/meshes/Wheel_L_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_sandee/meshes/Wheel_L_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Wheel_L"
+    type="fixed">
+    <origin
+      xyz="0 0.21299 -0.098154"
+      rpy="1.5708 0 3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="Wheel_L_Link" />
+    <axis
+      xyz="0 0 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="100" />
+  </joint>
+  <link
+    name="laser_frame">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_sandee/meshes/Lidar_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_sandee/meshes/Lidar_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="laser_frame_joint"
+    type="fixed">
+    <origin
+      xyz="-0.011359 -0.0045436 0.14802"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="laser_frame" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>
