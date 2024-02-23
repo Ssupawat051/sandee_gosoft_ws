@@ -129,3 +129,5 @@
 #### rviz sim
 ``roslaunch urdf_sim call_urdf.launch``
 ############################################################################################
+/home/sandee/sandee_ws/src/simple_navigation_goals/src/navi_goals.cpp:5:10: fatal error: nlohmann/json.hpp: No such file or directory
+    5 | #include <nlohmann/json.hpp>
