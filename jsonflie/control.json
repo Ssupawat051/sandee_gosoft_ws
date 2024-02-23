@@ -1,0 +1,29 @@
+{
+
+    "หน้าลิฟต์": {
+        "goal.target_pose.pose.position.x" : 6.190118789672852,
+        "goal.target_pose.pose.position.y" : 3.0056586265563965,
+        "goal.target_pose.pose.position.z" : 0,
+        "goal.target_pose.pose.orientation.y" : 0,
+        "goal.target_pose.pose.orientation.z" : 0.003793832825443487,
+        "goal.target_pose.pose.orientation.w" : 0.9999928033903507
+    } ,
+    "หน้าถังดับเพลิง": {
+        "goal.target_pose.pose.position.x" : 5.9316487312316895,
+        "goal.target_pose.pose.position.y" : 6.420914173126221,
+        "goal.target_pose.pose.position.z" : 0,
+        "goal.target_pose.pose.orientation.y" : 0,
+        "goal.target_pose.pose.orientation.z" : -0.9997608668786094,
+        "goal.target_pose.pose.orientation.w" : 0.021867991634609417
+    } ,
+    "ห้องครัว": {
+        "goal.target_pose.pose.position.x" : -6.472887992858887,
+        "goal.target_pose.pose.position.y" : 6.826329231262207,
+        "goal.target_pose.pose.position.z" : 0,
+        "goal.target_pose.pose.orientation.y" : 0,
+        "goal.target_pose.pose.orientation.z" : 0.9995304468053192,
+        "goal.target_pose.pose.orientation.w" : 0.030641245228597343
+    }
+
+
+}
