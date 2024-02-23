@@ -69,6 +69,10 @@
 1. ``rosrun joy joy_node``
 2. ``rosrun teleop_twist_joy teleop_node``
 
+### How to install json
+``sudo apt-get install libjsoncpp-dev``
+``sudo apt-get install nlohmann-json3-dev``
+
 ## Error & Troubleshooting
  ```bibtex
 ถ้าขึ้น bash: /home/san/rplidar_ws/devel/setup.bash: No such file or directory
