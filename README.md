@@ -56,6 +56,7 @@
 
 ### How to install Rosserial
 ``sudo apt-get install ros-noetic-rosserial``
+``sudo apt-get install ros-noetic-rosserial-arduino``
 
 ### How to install teleop
 ``sudo apt-get install ros-noetic-teleop-twist-keyborad``
