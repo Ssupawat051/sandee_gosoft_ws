@@ -69,9 +69,9 @@ async function stt(filePath) {
 
         const data = await result.json();
         const text = data.prediction;
+        console.log('USER:', data.prediction);
         nlp(text);
 
-        console.log('USER:', data.prediction);
         // if (text) {
         //     console.log('USER:', data.prediction);
 
