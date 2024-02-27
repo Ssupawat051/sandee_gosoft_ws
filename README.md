@@ -59,7 +59,7 @@
 ``sudo apt-get install ros-noetic-rosserial-arduino``
 
 ### How to install teleop
-``sudo apt-get install ros-noetic-teleop-twist-keyborad``
+``sudo apt-get install ros-noetic-teleop-twist-keyboard``
 #### How to run teleop
 ``rosrun teleop_twist_keyboard teleop_twist_keyboard.py``
 
