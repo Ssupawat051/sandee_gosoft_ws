@@ -171,24 +171,4 @@
   <param name="recovery_alpha_fast" value="0.0"/>
 </node>
 </launch>
-###########################
-goal: 
-  target_pose: 
-    header: 
-      seq: 0
-      stamp: 
-        secs: 1709278798
-        nsecs: 983129406
-      frame_id: "map"
-    pose: 
-      position: 
-        x: -0.0018177628517150879
-        y: -0.020768046379089355
-        z: 0.0
-      orientation: 
-        x: 0.0
-        y: 0.0
-        z: 0.005009247926782237
-        w: 0.9999874536388984
----
-#################################
+
