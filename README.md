@@ -137,6 +137,17 @@
 /home/sandee/sandee_ws/src/simple_navigation_goals/src/navi_goals.cpp:5:10: fatal error: nlohmann/json.hpp: No such file or directory
     5 | #include <nlohmann/json.hpp>
 ###########################
+header: 
+  seq: 0
+  stamp: 
+    secs: 1709278798
+    nsecs: 984065902
+  frame_id: ''
+goal_id: 
+  stamp: 
+    secs: 0
+    nsecs:         0
+  id: ''
 goal: 
   target_pose: 
     header: 
@@ -156,6 +167,37 @@ goal:
         z: 0.005009247926782237
         w: 0.9999874536388984
 ---
+header: 
+  seq: 1
+  stamp: 
+    secs: 1709279241
+    nsecs: 208830124
+  frame_id: ''
+goal_id: 
+  stamp: 
+    secs: 0
+    nsecs:         0
+  id: ''
+goal: 
+  target_pose: 
+    header: 
+      seq: 1
+      stamp: 
+        secs: 1709279241
+        nsecs: 208294528
+      frame_id: "map"
+    pose: 
+      position: 
+        x: 8.490129470825195
+        y: -0.04902374744415283
+        z: 0.0
+      orientation: 
+        x: 0.0
+        y: 0.0
+        z: 0.03936740567745952
+        w: 0.9992248032200893
+---
+
 #################################
 -----------------------
 <launch>
