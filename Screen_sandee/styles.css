@@ -1,0 +1,22 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* 100% ของความสูงของ viewport */
+}
+
+#image {
+    flex: 1; /* รูปภาพเต็มจอ */
+    object-fit: cover; /* ให้รูปภาพทำเต็มพื้นที่ที่กำหนด */
+    width: 100%;
+    height: 100%;
+}
+
+#micButton {
+    padding: 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
