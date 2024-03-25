@@ -1,0 +1,11 @@
+{
+  "room one": {
+    "goal.target_pose.pose.position.x": -0.0018177628517150879,
+    "goal.target_pose.pose.position.y": -0.020768046379089355,
+    "goal.target_pose.pose.position.z": 0,
+    "goal.target_pose.pose.orientation.x": 0,
+    "goal.target_pose.pose.orientation.y": 0,
+    "goal.target_pose.pose.orientation.z": 0.005009247926782237,
+    "goal.target_pose.pose.orientation.w": 0.9999874536388984
+  }
+}
