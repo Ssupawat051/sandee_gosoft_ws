@@ -1,0 +1,72 @@
+---
+  version: 1.0
+  image: 
+    name: "PGM:"
+    baseName: null
+    permissions: 600
+    format: YAML
+    formatDescription: The image format and characteristics
+    mimeType: application/json
+    class: DirectClass
+    geometry: 
+      width: 512
+      height: 512
+      x: 0
+      y: 0
+    
+    units: Undefined
+    type: Grayscale
+    endianness: Undefined
+    colorspace: Gray
+    depth: 8
+    baseDepth: 8
+    channelDepth: 
+      gray: 1
+    
+    pixels: 262144
+    channelStatistics: 
+      gray: 
+        min: 0
+        max: 255
+        mean: 175.463
+        median: 205
+        standardDeviation: 80.264
+        kurtosis: 0.949276
+        skewness: -1.62634
+        entropy: 0.58082
+      
+    
+    renderingIntent: Undefined
+    gamma: 0.454545
+    matteColor: '#BDBDBDBDBDBD'
+    backgroundColor: '#FFFFFFFFFFFF'
+    borderColor: '#DFDFDFDFDFDF'
+    transparentColor: '#000000000000'
+    interlace: None
+    intensity: Undefined
+    compose: Over
+    pageGeometry: 
+      width: 512
+      height: 512
+      x: 0
+      y: 0
+    
+    dispose: Undefined
+    iterations: 0
+    compression: Undefined
+    orientation: Undefined
+    properties: 
+      comment:  Created by GIMP version 2.10.36 PNM plug-in\n
+      "date:create": "2024-01-03T08:15:10+00:00"
+      "date:modify": "2024-01-03T08:15:10+00:00"
+      "date:timestamp": "2024-01-03T08:15:10+00:00"
+      signature: 555e0edf3eb60e8a340441d2deca8cb7a2c43fe52def5969c41e5705ec15041a
+    
+    tainted: false
+    filesize: 262205B
+    numberPixels: 262144
+    pixelsPerSecond: 126.768MB
+    userTime: 0.000u
+    elapsedTime: 0:01.002
+    version: "ImageMagick 7.1.1-5 Q16 x86_64 2d24be538:20230326 https://imagemagick.org"
+...
