@@ -118,7 +118,7 @@
 12. ``rosrun map_server map_saver -f my_room`` (คือการ save map หลังจากเดินทั่วห้อง ,my_room คือชื่อที่สามารถตั้งเองได้)
 
 ### How to run final for robot
-1.`` roscore``
+1. `` roscore``
 2. ``roslaunch simple_navigation_goals navi.launch``
 3. ``rosrun simple_navigation_goals sim_goals
 
