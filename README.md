@@ -6,15 +6,11 @@
 - Sensor: Encoder , Lidar
 - Version: 0.0.1
 
-### TODO
-- [ ] Use robot with navigation stack
-- [ ] Fix bug orientation is not correct
-- [ ] Sensor fusion of feedback encoder is not work
-
 ### DONE
 - [x] Control real robot with joystick
 - [x] Create and Save map for navigation
 - [x] URDF mobile robot
+- [x] Use robot with navigation stack
 
 ### Variable table
 | Variable | Meaning |
