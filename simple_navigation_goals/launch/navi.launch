@@ -29,7 +29,7 @@
 	<node pkg="odom_setup" type="odom" name="odometryNode" output="screen"/>
 
 	<!-- Run the map server -->
-	<node pkg="map_server" type="map_server" name="map_server" args="/home/sandee/final_map.yaml"/>
+	<node pkg="map_server" type="map_server" name="map_server" args="/home/sandee_ws/src/maps/test_room17.yaml"/>
 
 	<!-- Run AMCL -->
 	<include file="$(find amcl)/examples/amcl_diff.launch" /> 
@@ -37,12 +37,12 @@
 	<!-- Run move base -->
 	
 	<node pkg="move_base" type="move_base" name="move_base" respawn="true" output="screen">
-		<rosparam file="src/costmap_common_params.yaml" command="load" ns="global_costmap"/>
-		<rosparam file="src/costmap_common_params.yaml" command="load" ns="local_costmap"/>
-		<rosparam file="src/local_costmap_params.yaml" command="load"/>
-		<rosparam file="src/global_costmap_params.yaml" command="load"/>
-		<rosparam file="src/move_base_params.yaml" command="load"/>
-		<rosparam file="src/teb_local_planner_params.yaml" command="load"/>
+		<rosparam file="$(find simple_navigation_goals)/param/costmap_common_params.yaml" command="load" ns="global_costmap"/>
+		<rosparam file="$(find simple_navigation_goals)/param/costmap_common_params.yaml" command="load" ns="local_costmap"/>
+		<rosparam file="$(find simple_navigation_goals)/param/local_costmap_params.yaml" command="load"/>
+		<rosparam file="$(find simple_navigation_goals)/param/global_costmap_params.yaml" command="load"/>
+		<rosparam file="$(find simple_navigation_goals)/param/move_base_params.yaml" command="load"/>
+		<rosparam file="$(find simple_navigation_goals)/param/teb_local_planner_params.yaml" command="load"/>
  	</node>
 	
 	<include file="$(find urdf_sandee)/launch/display.launch" /> 
