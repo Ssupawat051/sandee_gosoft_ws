@@ -116,7 +116,7 @@
 ### How to run final for robot
 1. `` roscore``
 2. ``roslaunch simple_navigation_goals navi.launch``
-3. ``rosrun simple_navigation_goals sim_goals
+3. ``rosrun simple_navigation_goals sim_goals``
 
 ###########################################################################################
 ### Simulation in gazebo
