@@ -16,11 +16,6 @@
 
 	<node pkg="tf" type="static_transform_publisher" name="base_link_to_laser_frame" args="0.0 0.0 0.0 0.0 0.0 0.0 base_link laser_frame 100" /> 
 
-	<!-- Publish URDF to TF -->
-  	<!-- <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" output="screen">
-    <param name="publish_frequency" type="double" value="100.0"/>
-    <param name="tf_prefix" type="string" value=""/>
-  	</node > -->
 
 	<!--param name="robot_description" command="$(find xacro)/xacro inorder '$(find sandee_ws)/src/urdf_sandee/urdf/urdf_sandee.urdf'" /-->
 
