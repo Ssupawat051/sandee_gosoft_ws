@@ -118,3 +118,8 @@
 2. ``roslaunch simple_navigation_goals navi.launch``
 3. ``rosrun simple_navigation_goals sim_goals``
 
+### How to run jsonfile and navigation
+1. ``roscore``
+2. ``roslaunch simple_navigation_goals navi.launch``
+3. ``npm start``
+4. ``rosrun simple_navigation_goals sim_goals``
