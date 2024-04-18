@@ -118,19 +118,3 @@
 2. ``roslaunch simple_navigation_goals navi.launch``
 3. ``rosrun simple_navigation_goals sim_goals``
 
-###########################################################################################
-### Simulation in gazebo
-
-#### step run in gazebo
-1. ``roslaunch gazebo_ros empty_world.launch`` # create map
-2. ``roslaunch urdf_sim spawn_sandee.launch`` #spawn robot
-3. ``rosrun urdf_sim sandee_all.py`` #run auto
-
-#### How to take control
-``rosrun teleop_twist_keyboard teleop_twist_keyboard.py``
-
-#### rviz sim
-``roslaunch urdf_sim call_urdf.launch``
-############################################################################################
-/home/sandee/sandee_ws/src/simple_navigation_goals/src/navi_goals.cpp:5:10: fatal error: nlohmann/json.hpp: No such file or directory
-    5 | #include <nlohmann/json.hpp>
