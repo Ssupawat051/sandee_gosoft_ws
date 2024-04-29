@@ -107,8 +107,8 @@
 5. ``rostopic echo /scan``
 6. ``roslaunch hector_slam_launch tutorial.launch``
 7. ``arduino --upload /sandee_ws/firmware/Motor/Motor.ino --port ~/dev/ttyUSB1``
-8. ``rosrun odom myodom`` 
-9. ``rosrun rosserial_arduino serial_node.py _port:=/dev/ttyUSB1``
+8. ``rosrun rosserial_arduino serial_node.py _port:=/dev/ttyUSB1``
+9. ``rosrun odom myodom``
 10. ``rosrun joy joy_node``
 11. ``rosrun teleop_twist_joy teleop_node``
 12. ``rosrun map_server map_saver -f my_room`` (คือการ save map หลังจากเดินทั่วห้อง ,my_room คือชื่อที่สามารถตั้งเองได้)
